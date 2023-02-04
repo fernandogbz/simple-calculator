@@ -3,4 +3,8 @@ const displayCurrentValue = document.getElementById('current-value');
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
 
-const calculator = new Calculator();
+const display = new Display(displayLastValue, displayCurrentValue);
+
+numberButtons.forEach(button => {
+  button.addEventListener('click', () => display.addNumber(button.innerHTML))
+})
